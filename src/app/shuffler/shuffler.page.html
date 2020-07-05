@@ -1,0 +1,35 @@
+<ion-content class="shuffler">
+    <ion-row class="ion-margin-top ion-margin-bottom header-row">
+        <ion-col class="ion-margin-top" offsetLg="3" sizeLg="6">
+            <h1 class="ion-text-center ion-margin-top">Git Commands and cheatsheet</h1>
+            <ion-searchbar autocomplete (ionChange)="search($event)"></ion-searchbar>
+        </ion-col>
+    </ion-row>
+    <ion-row *ngIf="!filteredItems.length">
+        <ion-col sizeLg="4" *ngFor="let item of items">
+            <ion-card class="ion-padding-top app-card ion-margin-top ion-margin-bottom">
+                <ion-card-header>
+                    <ion-card-title class="ion-text-capitalize" color="primary">{{item.title}}</ion-card-title>
+                    <pre><code>{{item.command}}</code></pre>
+                </ion-card-header>
+                <ion-card-content>
+                    {{item.description}}
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="filteredItems.length">
+        <ion-col sizeLg="4" *ngFor="let item of filteredItems">
+            <ion-card class="ion-padding-top app-card ion-margin-top ion-margin-bottom">
+                <ion-card-header>
+                    <ion-card-title class="ion-text-capitalize" color="primary">{{item.title}}</ion-card-title>
+                    <pre><code>{{item.command}}</code></pre>
+                </ion-card-header>
+                <ion-card-content>
+                    {{item.description}}
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+</ion-content>

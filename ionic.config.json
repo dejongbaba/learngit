@@ -1,0 +1,7 @@
+{
+  "name": "learn-git",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
