@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FavouritesPageRoutingModule } from './favourites-routing.module';
+import { ShufflerPageRoutingModule } from './home-routing.module';
 
-import { FavouritesPage } from './favourites.page';
+import { HomePage } from './home.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FavouritesPageRoutingModule
+    ShufflerPageRoutingModule
   ],
-  declarations: [FavouritesPage]
+  declarations: [HomePage]
 })
-export class FavouritesPageModule {}
+export class ShufflerPageModule {}

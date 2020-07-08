@@ -1,0 +1,32 @@
+
+.option--panel {
+  width: 100%;
+
+  ion-radio-group {
+    //display: flex;
+    //align-items: center;
+    //justify-content: center;
+
+    ion-item {
+      border-bottom: none;
+      min-height: 50px;
+      margin: 1rem;
+      --border: 0;
+      border-radius: 1rem;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.03);
+
+      ion-label {
+        border-bottom: 0;
+      }
+
+      ion-radio {
+        margin: 0 1rem 0 0;
+
+        .radio-icon {
+
+        }
+      }
+
+    }
+  }
+}

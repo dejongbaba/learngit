@@ -1,0 +1,128 @@
+[
+  {
+    "label": " What does git show [commit] do?",
+    "choices": [
+      {
+        "value": "Outputs metadata and content changes of the specified commit",
+        "correct": true
+      },
+      {
+        "value": "Shows content differences between two branches",
+        "correct": false
+      },
+      {
+        "value": "Lists version history for a file, including renames",
+        "correct": false
+      },
+      {
+        "value": "Lists version history for the current branch",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "What does git log do ?",
+    "choices": [
+      {
+        "value": "Lists version history for the current branch",
+        "correct": true
+      },
+      {
+        "value": "Lists version history for a file, including renames",
+        "correct": false
+      },
+      {
+        "value": "Shows content differences between two branches",
+        "correct": false
+      },
+      {
+        "value": "Outputs metadata and content changes of the specified commit",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "What does git log --follow [file] command do ?",
+    "choices": [
+      {
+        "value": "Lists version history for a file, including renames",
+        "correct": true
+      },
+      {
+        "value": "Shows content differences between two branches",
+        "correct": false
+      },
+      {
+        "value": "Discards all history and changes back to the specified commit",
+        "correct": false
+      },
+      {
+        "value": "Undoes all commits after [commit], preserving changes locally",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": " What does this command git reset [commit] do?",
+    "choices": [
+      {
+        "value": "Undoes all commits after ",
+        "correct": true
+      },
+      {
+        "value": "Discards all history and changes back to the specified commit",
+        "correct": false
+      },
+      {
+        "value": "Lists version history for a file, including renames",
+        "correct": false
+      },
+      {
+        "value": "Lists version history for the current branch",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "what command snapshots the file in preparation for versioning?",
+    "choices": [
+      {
+        "value": "git add [file]",
+        "correct": true
+      },
+      {
+        "value": "git show [commit]",
+        "correct": false
+      },
+      {
+        "value": "git log --follow [file]",
+        "correct": false
+      },
+      {
+        "value": "git log",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "What command outputs metadata and content changes of the specified commit",
+    "choices": [
+      {
+        "value": "git log --follow [file]",
+        "correct": false
+      },
+      {
+        "value": "git show [commit]",
+        "correct": true
+      },
+      {
+        "value": "git reset --hard [commit]",
+        "correct": false
+      },
+      {
+        "value": "git reset [commit]",
+        "correct": false
+      }
+    ]
+  }
+]

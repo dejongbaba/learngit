@@ -24,7 +24,7 @@ export class SplashPage implements OnInit {
       this.modalCtrl.dismiss();
     }, 4000);
 
-    this.navCtrl.navigateRoot('shuffler');
+    this.navCtrl.navigateRoot('home');
   }
 
   hideSplash() {

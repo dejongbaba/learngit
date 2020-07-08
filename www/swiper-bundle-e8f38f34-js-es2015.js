@@ -3977,7 +3977,7 @@ class Swiper extends SwiperClass {
     let $wrapperEl;
     if (el && el.shadowRoot && el.shadowRoot.querySelector) {
       $wrapperEl = $(el.shadowRoot.querySelector(`.${swiper.params.wrapperClass}`));
-      // Children needs to return slot items
+      // Children needs to return slot commands
       $wrapperEl.children = (options) => $el.children(options);
     } else {
       $wrapperEl = $el.children(`.${swiper.params.wrapperClass}`);
@@ -4881,7 +4881,7 @@ const Mousewheel = {
 
 const Pagination = {
   update() {
-    // Render || Update Pagination bullets/items
+    // Render || Update Pagination bullets/commands
     const swiper = this;
     const rtl = swiper.rtl;
     const params = swiper.params.pagination;

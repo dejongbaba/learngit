@@ -1,0 +1,34 @@
+.footer{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  margin-top: 3rem;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+
+  .no-decoration{
+    text-decoration: none;
+  }
+  .link-wrapper{
+    margin: 1rem auto 0;
+    width: 60%;
+    display:flex;
+    justify-content: space-evenly;
+  }
+}
+
+
+@media all and (min-width:768px){
+
+  .footer{
+    flex-direction: row;
+    justify-content: space-between;
+    .link-wrapper{
+      width: 10%;
+      margin: 0;
+    }
+  }
+}

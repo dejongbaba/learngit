@@ -3,7 +3,9 @@ import {Component, OnInit} from '@angular/core';
 import {ModalController, Platform} from '@ionic/angular';
 import {SplashScreen} from '@ionic-native/splash-screen/ngx';
 import {StatusBar} from '@ionic-native/status-bar/ngx';
-import {SplashPage} from './splash/splash.page';
+import {SplashPage} from './pages/splash/splash.page';
+import {Router} from '@angular/router';
+import {EventQueueService} from './services/event-queue.service';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +14,28 @@ import {SplashPage} from './splash/splash.page';
 })
 export class AppComponent implements OnInit {
 
+  activePath = '';
+
+  points = 0;
+  subscription: any;
+  pages = [
+    {
+      name: 'Home',
+      path: '/home'
+    },
+    {
+      name: 'Learn Git Challenge',
+      path: '/game'
+    }
+  ];
 
   constructor(
       private platform: Platform,
       private splashScreen: SplashScreen,
       private modalCtrl: ModalController,
-      private statusBar: StatusBar
+      private router: Router,
+      private statusBar: StatusBar,
+      private eventService: EventQueueService
   ) {
     this.initializeApp();
   }
@@ -39,6 +57,12 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('init');
+    this.subscription = this.eventService.eventBroker$.subscribe(data => {
+      this.points = data?.points;
+    });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

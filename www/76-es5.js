@@ -506,10 +506,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           return Promise.resolve(positionForIndex(index, this.cells, this.getHeightIndex()));
         }
         /**
-         * This method marks a subset of items as dirty, so they can be re-rendered. Items should be marked as
+         * This method marks a subset of commands as dirty, so they can be re-rendered. Items should be marked as
          * dirty any time the content or their style changes.
          *
-         * The subset of items to be updated can are specifing by an offset and a length.
+         * The subset of commands to be updated can are specifing by an offset and a length.
          */
 
       }, {
@@ -527,7 +527,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
                   case 0:
                     len = _args2.length > 1 && _args2[1] !== undefined ? _args2[1] : -1;
 
-                    if (this.items) {
+                    if (this.commands) {
                       _context2.next = 3;
                       break;
                     }
@@ -535,11 +535,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
                     return _context2.abrupt("return");
 
                   case 3:
-                    length = len === -1 ? this.items.length - offset : len;
+                    length = len === -1 ? this.commands.length - offset : len;
                     cellIndex = findCellIndex(this.cells, offset);
-                    cells = _calcCells(this.items, this.itemHeight, this.headerHeight, this.footerHeight, this.headerFn, this.footerFn, this.approxHeaderHeight, this.approxFooterHeight, this.approxItemHeight, cellIndex, offset, length);
+                    cells = _calcCells(this.commands, this.itemHeight, this.headerHeight, this.footerHeight, this.headerFn, this.footerFn, this.approxHeaderHeight, this.approxFooterHeight, this.approxItemHeight, cellIndex, offset, length);
                     this.cells = inplaceUpdate(this.cells, cells, cellIndex);
-                    this.lastItemLen = this.items.length;
+                    this.lastItemLen = this.commands.length;
                     this.indexDirty = Math.max(offset - 1, 0);
                     this.scheduleUpdate();
 
@@ -558,7 +558,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           return checkRange;
         }()
         /**
-         * This method marks the tail the items array as dirty, so they can be re-rendered.
+         * This method marks the tail the commands array as dirty, so they can be re-rendered.
          *
          * It's equivalent to calling:
          *
@@ -575,7 +575,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
               while (1) {
                 switch (_context3.prev = _context3.next) {
                   case 0:
-                    if (this.items) {
+                    if (this.commands) {
                       this.checkRange(this.lastItemLen);
                     }
 
@@ -725,12 +725,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       }, {
         key: "calcCells",
         value: function calcCells() {
-          if (!this.items) {
+          if (!this.commands) {
             return;
           }
 
-          this.lastItemLen = this.items.length;
-          this.cells = _calcCells(this.items, this.itemHeight, this.headerHeight, this.footerHeight, this.headerFn, this.footerFn, this.approxHeaderHeight, this.approxFooterHeight, this.approxItemHeight, 0, 0, this.lastItemLen);
+          this.lastItemLen = this.commands.length;
+          this.cells = _calcCells(this.commands, this.itemHeight, this.headerHeight, this.footerHeight, this.headerFn, this.footerFn, this.approxHeaderHeight, this.approxFooterHeight, this.approxItemHeight, 0, 0, this.lastItemLen);
           this.indexDirty = 0;
         }
       }, {

@@ -1,0 +1,22 @@
+<ion-card *ngIf="question">
+    <ion-card-header>
+        <ion-card-title>
+            <h1>{{question.label}}</h1>
+        </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-label>Pick one Answer :</ion-label>
+        <ion-item>
+            <form class="option--panel" [formGroup]="form">
+                <ion-list>
+                    <ion-radio-group formControlName="choice">
+                        <ion-item *ngFor="let choice of question.choices">
+                            <ion-label>{{choice.value}}</ion-label>
+                            <ion-radio slot="start" [value]="choice.value"></ion-radio>
+                        </ion-item>
+                    </ion-radio-group>
+                </ion-list>
+            </form>
+        </ion-item>
+    </ion-card-content>
+</ion-card>

@@ -1,0 +1,43 @@
+<ion-content class="app-game">
+    <!--    stage one -->
+    <ion-row>
+        <ion-col>
+            <div class="game-section" *ngIf="view === views.welcome">
+                <ion-card>
+                    <h1>Welcome to Learn Git Challenge</h1>
+                    <p>
+                        This challenge would help you learn all the git
+                        commands and how to use them as you solve problems
+                        daily
+                    </p>
+                    <ion-button (click)="gotoGameScreen()" color="primary">Start Game</ion-button>
+                </ion-card>
+            </div>
+        </ion-col>
+    </ion-row>
+
+
+    <!--    stage two -->
+    <div class="game-section" *ngIf="view === views.game && questions">
+        <ion-row>
+            <ion-col>
+                <app-question-form
+                        [question]="questions[currentQuestionIndex]"
+                        (onChoiceMade)="updateChoice($event)">
+                </app-question-form>
+                <ion-button
+                        *ngIf="currentQuestionIndex === questions.length - 1 "
+                        color="primary"
+                        (click)="showResult()"
+                        [disabled]="!answers.values[currentQuestionIndex]">
+                    View results
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </div>
+    <!--    stage three -->
+    <div class="game-section" *ngIf="this.view === this.views.result">
+        <app-result [points]="gamePoint"></app-result>
+    </div>
+
+</ion-content>

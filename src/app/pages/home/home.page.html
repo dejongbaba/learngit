@@ -5,28 +5,28 @@
             <ion-searchbar autocomplete (ionChange)="search($event)"></ion-searchbar>
         </ion-col>
     </ion-row>
-    <ion-row *ngIf="!filteredItems.length">
-        <ion-col sizeLg="4" *ngFor="let item of items">
+    <ion-row *ngIf="!filteredCommands.length">
+        <ion-col sizeLg="4" *ngFor="let command of commands">
             <ion-card class="ion-padding-top app-card ion-margin-top ion-margin-bottom">
                 <ion-card-header>
-                    <ion-card-title class="ion-text-capitalize" color="primary">{{item.title}}</ion-card-title>
-                    <pre><code>{{item.command}}</code></pre>
+                    <ion-card-title class="ion-text-capitalize" color="primary">{{command.title}}</ion-card-title>
+                    <pre><code>{{command.command}}</code></pre>
                 </ion-card-header>
                 <ion-card-content>
-                    {{item.description}}
+                    {{command.description}}
                 </ion-card-content>
             </ion-card>
         </ion-col>
     </ion-row>
 
-    <ion-row *ngIf="filteredItems.length">
-        <ion-col sizeLg="4" *ngFor="let item of filteredItems">
+    <ion-row *ngIf="filteredCommands.length">
+        <ion-col sizeLg="4" *ngFor="let item of filteredCommands">
             <ion-card class="ion-padding-top app-card ion-margin-top ion-margin-bottom">
                 <ion-card-header>
                     <ion-card-title class="ion-text-capitalize" color="primary">{{item.title}}</ion-card-title>
-                    <pre><code>{{item.command}}</code></pre>
                 </ion-card-header>
                 <ion-card-content>
+                    <code>{{item.command}}</code>
                     {{item.description}}
                 </ion-card-content>
             </ion-card>

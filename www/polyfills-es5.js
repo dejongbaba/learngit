@@ -8577,7 +8577,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       forced: !HAS_SPECIES_SUPPORT || !USES_TO_LENGTH
     }, {
       splice: function splice(start, deleteCount
-      /* , ...items */
+      /* , ...commands */
       ) {
         var O = toObject(this);
         var len = toLength(O.length);

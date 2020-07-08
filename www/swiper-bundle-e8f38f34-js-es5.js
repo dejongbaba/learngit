@@ -4490,7 +4490,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var $wrapperEl;
 
         if (el && el.shadowRoot && el.shadowRoot.querySelector) {
-          $wrapperEl = $(el.shadowRoot.querySelector(".".concat(swiper.params.wrapperClass))); // Children needs to return slot items
+          $wrapperEl = $(el.shadowRoot.querySelector(".".concat(swiper.params.wrapperClass))); // Children needs to return slot commands
 
           $wrapperEl.children = function (options) {
             return $el.children(options);
@@ -5416,7 +5416,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     };
     var Pagination = {
       update: function update() {
-        // Render || Update Pagination bullets/items
+        // Render || Update Pagination bullets/commands
         var swiper = this;
         var rtl = swiper.rtl;
         var params = swiper.params.pagination;
